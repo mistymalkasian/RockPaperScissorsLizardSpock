@@ -16,7 +16,7 @@ namespace RockPaperScissorsLizardSpock
 
         Random Random = new Random();
 
-        private void DisplayRules()
+        public void DisplayRules()
         {
             Console.WriteLine("You are playing \"Rock Paper Scissors Lizard Spock\"");
             Console.WriteLine("These are the rules: ");
@@ -32,12 +32,14 @@ namespace RockPaperScissorsLizardSpock
             Console.WriteLine("and (as it always has,) Rock crushes Scissors");
             Console.WriteLine("Please press ENTER to continue.");
             Console.ReadLine();
+            DecideOpponent();
 
         }
 
         private void DecideOpponent()
 
         {
+            Console.Clear();
             Console.WriteLine("Will you be playing against another player? Type 1 if yes, 2 if no.");
             int PlayerAnswer = Convert.ToInt32(Console.ReadLine());
 
@@ -76,33 +78,50 @@ namespace RockPaperScissorsLizardSpock
             Console.WriteLine("Choose 5 for Spock.");
 
             int UserChoice1 = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
 
             switch (UserChoice1)
             {
 
                 case 1:
+                    Console.WriteLine(name1 + ", you chose rock!");
+                    Console.ReadLine();
+                    Console.Clear();
 
                     break;
 
                 case 2:
+                    Console.WriteLine(name1 + ", you chose paper!");
+                    Console.ReadLine();
+                    Console.Clear();
 
                     break;
 
                 case 3:
+                    Console.WriteLine(name1 + ", you chose scissors!");
+                    Console.ReadLine();
+                    Console.Clear();
 
                     break;
 
                 case 4:
+                    Console.WriteLine(name1 + ", you chose lizard!");
+                    Console.ReadLine();
+                    Console.Clear();
 
                     break;
 
                 case 5:
+                    Console.WriteLine(name1 + ", you chose Spock!");
+                    Console.ReadLine();
+                    Console.Clear();
 
                     break;
 
                 default:
 
                     Console.WriteLine("You have made an invalid selection. Please only choose an integral number between 1 and 5.");
+                    Console.Clear();
                     RunPvPGame();
 
                     break;
@@ -117,27 +136,43 @@ namespace RockPaperScissorsLizardSpock
             Console.WriteLine("Choose 5 for Spock.");
 
             int UserChoice2 = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
 
             switch (UserChoice2)
             {
 
                 case 1:
+                    Console.WriteLine(name2 + ", you chose rock!");
+                    Console.ReadLine();
+                    Console.Clear();
 
                     break;
 
                 case 2:
+                    Console.WriteLine(name2 + ", you chose paper!");
+                    Console.ReadLine();
+                    Console.Clear();
 
                     break;
 
                 case 3:
+                    Console.WriteLine(name2 + ", you chose scissors!");
+                    Console.ReadLine();
+                    Console.Clear();
 
                     break;
 
                 case 4:
+                    Console.WriteLine(name2 + ", you chose lizard!");
+                    Console.ReadLine();
+                    Console.Clear();
 
                     break;
 
                 case 5:
+                    Console.WriteLine(name2 + ", you chose Spock!");
+                    Console.ReadLine();
+                    Console.Clear();
 
                     break;
 
@@ -171,29 +206,42 @@ namespace RockPaperScissorsLizardSpock
             {
 
                 case 1:
+                    Console.WriteLine(name1 + ", you chose rock!");
+                    Console.ReadLine();
+                    Console.Clear();
 
                     break;
 
                 case 2:
+                    Console.WriteLine(name1 + ", you chose paper!");
+                    Console.ReadLine();
+                    Console.Clear();
 
                     break;
 
                 case 3:
-
+                    Console.WriteLine(name1 + ", you chose scissors!");
+                    Console.ReadLine();
+                    Console.Clear();
                     break;
 
                 case 4:
-
+                    Console.WriteLine(name1 + ", you chose lizard!");
+                    Console.ReadLine();
+                    Console.Clear();
                     break;
 
                 case 5:
-
+                    Console.WriteLine(name1 + ", you chose Spock!");
+                    Console.ReadLine();
+                    Console.Clear();
                     break;
 
                 default:
 
                     Console.WriteLine("You have made an invalid selection. Please only choose an integral number between 1 and 5.");
-                    RunPvPGame();
+                    Console.Clear();
+                    RunPvCGame();
 
                     break;
             }
@@ -208,27 +256,33 @@ namespace RockPaperScissorsLizardSpock
 
                 case 1:
                     Console.WriteLine("The Computer has chosen rock!");
+
                     break;
 
                 case 2:
                     Console.WriteLine("The Computer has chosen paper!");
+
                     break;
 
                 case 3:
                     Console.WriteLine("The Computer has chosen scissors!");
+
                     break;
 
                 case 4:
                     Console.WriteLine("The Computer has chosen lizard!");
+
                     break;
 
                 case 5:
                     Console.WriteLine("The Computer has chosen Spock!");
+
                     break;
 
 
             }
-
+            Console.ReadLine();
+           
 
         }
 

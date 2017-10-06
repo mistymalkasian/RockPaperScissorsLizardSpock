@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissorsLizardSpock
 {
-    class Player1 : Player
+    class HumanPlayer : Player
     {
         //member variables
 
         //object constructor
 
-        public Player1()
+        public HumanPlayer()
         {
             string name = Console.ReadLine();
         }

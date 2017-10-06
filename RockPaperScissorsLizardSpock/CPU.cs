@@ -14,6 +14,7 @@ namespace RockPaperScissorsLizardSpock
         public CPU()
         {
            string name = "The Computer";
+           
         }
         //member methods
     }

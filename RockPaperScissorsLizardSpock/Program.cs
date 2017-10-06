@@ -10,11 +10,16 @@ namespace RockPaperScissorsLizardSpock
     {
         static void Main(string[] args)
         {
-            Game NewGame = new Game();
+            Game Game = new Game();
             Player Player = new Player();
+            HumanPlayer HumanPlayer = new HumanPlayer();
+            CPU CPU = new CPU();
 
-            NewGame.Rules();
-            NewGame.RunGame();
+
+            Game.DisplayRules();
+           
+
+
         }
     }
 }
