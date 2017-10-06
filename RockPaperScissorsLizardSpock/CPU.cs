@@ -10,12 +10,18 @@ namespace RockPaperScissorsLizardSpock
     {
         //member variables
 
-        //object constructor
+        public double Player2Choice;
+
+
+        //object cons.
         public CPU()
         {
-           string name = "The Computer";
-           
-        }
-        //member methods
+         
+
     }
+
 }
+
+}
+        //member methods
+ 

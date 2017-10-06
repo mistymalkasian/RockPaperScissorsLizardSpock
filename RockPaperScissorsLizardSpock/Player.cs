@@ -6,21 +6,17 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissorsLizardSpock
 {
-    class Player
+    public class Player
     {
         //member variables
 
-        string name;
-        double rounds;
-        double score;
+       public double score;
+        public double Player1Choice;
+       public string name1;
 
         //object constructor
 
         //member methods
-
-
-    
-
 
     }
 }
