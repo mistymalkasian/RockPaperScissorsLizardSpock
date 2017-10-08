@@ -10,23 +10,22 @@ namespace RockPaperScissorsLizardSpock
     {
         //member variables
 
-        string name1;
-        string name2;
-        public double Player1Choice;
-        public double Player2Choice;
+       Player Player1;
+       Player Player2;
 
-        Player Player1 = new Player();
-        Player Player2 = new Player();
-        CPU CPU = new CPU();
-
-
-        //object constructor
 
         //member methods
 
+        public void RunGame()
+        {
+            DisplayRules();
+            DecideOpponent();
+            RunRound();
+           
 
+        }
 
-        public void StartGame()
+        public void DisplayRules()
         {
             Console.WriteLine("");
             Console.WriteLine("=========================");
@@ -35,16 +34,16 @@ namespace RockPaperScissorsLizardSpock
             Console.WriteLine("==");
             Console.WriteLine("You are playing \"Rock Paper Scissors Lizard Spock\"");
             Console.WriteLine("These are the rules: ");
-            Console.WriteLine("Scissors cuts Paper");
-            Console.WriteLine("Paper covers Rock");
-            Console.WriteLine("Rock crushes Lizard");
+            Console.WriteLine("Scissors cuts paper");
+            Console.WriteLine("Paper covers rock");
+            Console.WriteLine("Rock crushes lizard");
             Console.WriteLine("Lizard poisons Spock");
-            Console.WriteLine("Spock smashes Scissors");
-            Console.WriteLine("Scissors decapitates Lizard");
-            Console.WriteLine("Lizard eats Paper");
+            Console.WriteLine("Spock smashes scissors");
+            Console.WriteLine("Scissors decapitates lizard");
+            Console.WriteLine("Lizard eats paper");
             Console.WriteLine("Paper disproves Spock");
-            Console.WriteLine("Spock vaporizes Rock");
-            Console.WriteLine("and (as it always has,) Rock crushes Scissors");
+            Console.WriteLine("Spock vaporizes rock");
+            Console.WriteLine("and (as it always has,) rock crushes scissors.");
             Console.WriteLine("==");
             Console.WriteLine("========");
             Console.WriteLine("=================");
@@ -52,11 +51,10 @@ namespace RockPaperScissorsLizardSpock
             Console.WriteLine("");
             Console.WriteLine("Please press ENTER to continue.");
             Console.ReadLine();
-            DecideOpponent();
 
         }
 
-        private void DecideOpponent()
+        public void DecideOpponent()
 
         {
             Console.Clear();
@@ -75,16 +73,20 @@ namespace RockPaperScissorsLizardSpock
                 DecideOpponent();
 
             }
-
-
             switch (PlayerAnswer)
             {
                 case 1:
-                    RunPvPGame();
+                    Player1 = new Player();
+                    Player2 = new Player();
+                    AskForName();
+               
                     break;
 
                 case 2:
-                    RunPvCGame();
+                    Player1 = new Player();
+                    Player2 = new CPU();
+                    DisplayCPUMessage();
+
                     break;
 
                 default:
@@ -96,299 +98,102 @@ namespace RockPaperScissorsLizardSpock
             }
         }
 
-        private void RunPvPGame()
+        public void AskForName()
+
         {
-
-            
             Console.WriteLine("Player1, what is your name?");
-            string name1 = Console.ReadLine();
-            Console.WriteLine("Player 2, what is your name?");
-            string name2 = Console.ReadLine();
 
+            Player1.name = Console.ReadLine();
 
-            Console.WriteLine(name1 + ", please make your selection.");
-            Console.WriteLine("Choose 1 for Rock.");
-            Console.WriteLine("Choose 2 for Paper.");
-            Console.WriteLine("Choose 3 for Scissors.");
-            Console.WriteLine("Choose 4 for Lizard.");
-            Console.WriteLine("Choose 5 for Spock.");
+            Console.WriteLine("Player2, what is your name?");
 
-            int UserChoice1 = Convert.ToInt32(Console.ReadLine());
+            Player2.name = Console.ReadLine();
 
+            Console.Clear();
 
-            switch (UserChoice1)
-            {
-
-                case 1:
-                    Console.WriteLine(name1 + ", you chose rock!");
-                    Console.ReadLine();
-                    Console.Clear();
-
-                    break;
-
-                case 2:
-                    Console.WriteLine(name1 + ", you chose paper!");
-                    Console.ReadLine();
-                    Console.Clear();
-
-                    break;
-
-                case 3:
-                    Console.WriteLine(name1 + ", you chose scissors!");
-                    Console.ReadLine();
-                    Console.Clear();
-
-                    break;
-
-                case 4:
-                    Console.WriteLine(name1 + ", you chose lizard!");
-                    Console.ReadLine();
-                    Console.Clear();
-
-                    break;
-
-                case 5:
-                    Console.WriteLine(name1 + ", you chose Spock!");
-                    Console.ReadLine();
-                    Console.Clear();
-
-                    break;
-
-                default:
-
-                    Console.WriteLine("You have made an invalid selection. Please only choose an integral number between 1 and 5.");
-                    Console.Clear();
-                    RunPvPGame();
-
-                    break;
-            }
-
-
-            Console.WriteLine(name2 + ", please make your selection.");
-            Console.WriteLine("Choose 1 for Rock.");
-            Console.WriteLine("Choose 2 for Paper.");
-            Console.WriteLine("Choose 3 for Scissors.");
-            Console.WriteLine("Choose 4 for Lizard.");
-            Console.WriteLine("Choose 5 for Spock.");
-
-            int UserChoice2 = Convert.ToInt32(Console.ReadLine());
-
-
-            switch (UserChoice2)
-            {
-
-                case 1:
-                    Console.WriteLine(name2 + ", you chose rock!");
-                    Console.ReadLine();
-                    Console.Clear();
-
-                    break;
-
-                case 2:
-                    Console.WriteLine(name2 + ", you chose paper!");
-                    Console.ReadLine();
-                    Console.Clear();
-
-                    break;
-
-                case 3:
-                    Console.WriteLine(name2 + ", you chose scissors!");
-                    Console.ReadLine();
-                    Console.Clear();
-
-                    break;
-
-                case 4:
-                    Console.WriteLine(name2 + ", you chose lizard!");
-                    Console.ReadLine();
-                    Console.Clear();
-
-                    break;
-
-                case 5:
-                    Console.WriteLine(name2 + ", you chose Spock!");
-                    Console.ReadLine();
-                    Console.Clear();
-
-                    break;
-
-                default:
-
-                    Console.WriteLine("You have made an invalid selection. Please only choose an integral number between 1 and 5.");
-                    RunPvPGame();
-
-                    break;
-            }
         }
 
-        private void RunPvCGame()
+        public void RunRound()
+        {
+            Player1.PlayerChoose(Player1);
+            Player2.PlayerChoose(Player2);
+            DetermineRoundWinner();
 
+        }
+        public void AddToScore(Player player)
+        {
+           player.score += 1;
+
+        }
+        public void DisplayCPUMessage()
         {
             Console.WriteLine("Very well, you may play against the Computer! The Computer is very excited to begin.");
-
-            Console.WriteLine("Player1, what is your name?");
-
-            name1 =Console.ReadLine();
-
-
-            Console.WriteLine(name1 + ", please make your selection.");
-            Console.WriteLine("Choose 1 for Rock.");
-            Console.WriteLine("Choose 2 for Paper.");
-            Console.WriteLine("Choose 3 for Scissors.");
-            Console.WriteLine("Choose 4 for Lizard.");
-            Console.WriteLine("Choose 5 for Spock.");
-
-            int UserChoice1 = Convert.ToInt32(Console.ReadLine());
-
-            switch (UserChoice1)
-            {
-
-                case 1:
-                    Console.WriteLine(name1 + ", you chose rock!");
-                    Console.ReadLine();
-
-
-                    break;
-
-                case 2:
-                    Console.WriteLine(name1 + ", you chose paper!");
-                    Console.ReadLine();
-
-                    break;
-
-                case 3:
-                    Console.WriteLine(name1 + ", you chose scissors!");
-                    Console.ReadLine();
-
-                    break;
-
-                case 4:
-                    Console.WriteLine(name1 + ", you chose lizard!");
-                    Console.ReadLine();
-
-                    break;
-
-                case 5:
-                    Console.WriteLine(name1 + ", you chose Spock!");
-                    Console.ReadLine();
-
-                    break;
-
-                default:
-
-                    Console.WriteLine("You have made an invalid selection. Please only choose an integral number between 1 and 5.");
-                    Console.Clear();
-                    RunPvCGame();
-
-                    break;
-            }
-
-            Console.WriteLine("The Computer has chosen as well!");
-
-            Random Random = new Random();
-            int CPUchoice = Random.Next(1, 6);
-
-
-            switch (CPUchoice)
-            {
-
-                case 1:
-                    Console.WriteLine("The Computer has chosen rock!");
-
-                    break;
-
-                case 2:
-                    Console.WriteLine("The Computer has chosen paper!");
-
-                    break;
-
-                case 3:
-                    Console.WriteLine("The Computer has chosen scissors!");
-
-                    break;
-
-                case 4:
-                    Console.WriteLine("The Computer has chosen lizard!");
-
-                    break;
-
-                case 5:
-                    Console.WriteLine("The Computer has chosen Spock!");
-
-                    break;
-
-
-            }
-            Console.ReadLine();
-            DetermineRoundWinner();
+            Console.WriteLine("Player, what is your name?");
+            Player1.name = Console.ReadLine();
         }
 
-
-        private void DetermineRoundWinner()
+       
+        public void DetermineRoundWinner()
         {
-            double d = Convert.ToInt32((5 + Player1Choice - Player2Choice) % 5);
+            double Outcome = Convert.ToInt32((5 + Player1.choice - Player2.choice) % 5);
 
-
-            if (d == 1 | d == 3)
-
-            {
-                Console.WriteLine(name1 + ", you win!!!");
-                Console.ReadLine();
-                Console.ReadLine();
-                AddToScore1();
-            }
-
-
-
-            else if (d == 2 | d == 4)
+            if (Outcome == 1 || Outcome == 3)
 
             {
-
-                Console.WriteLine(name2 + " has won!!!");
+                Console.WriteLine(Player1.name + ", you win the round!!!");
                 Console.ReadLine();
-                AddToScore2();
+                AddToScore(Player1);
+                DetermineGameWinner();
+
+            }
+
+            else if (Outcome == 2 || Outcome == 4)
+
+            {
+                Console.WriteLine(Player2.name + " has won the round!!!");
+                Console.ReadLine();
+                AddToScore(Player2);
+                DetermineGameWinner();
             }
 
 
-            else
+            else if (Outcome == 0)
 
-            { 
-                
-            Console.WriteLine("There has been a tie!");
-            Console.ReadLine();
+            {
+
+                Console.WriteLine("There has been a tie! This round didn't count.");
+                Console.ReadLine();
+                RunRound();
 
             }
+
         }
 
-
-        private void DetermineGameWinner()
+        public void DetermineGameWinner()
         {
             if (Player1.score == 2)
-               
+
             {
-                Console.WriteLine("Congratulations " + name1 + ", you have won the game!!!");
+                Console.WriteLine("Congratulations " + Player1.name + ", you have won the game!!!");
+                Console.ReadLine();
+                Console.Clear();
+                RunGame();
+                
             }
-            else 
+            else if (Player2.score == 2)
             {
-                Console.WriteLine("No winner has been determined yet! On to the next round!");
-                DetermineRoundWinner();
-
+                Console.WriteLine("Congratulations " + Player2.name + ", you have won the game!!!");
+                Console.Clear();
+                Console.ReadLine();
+                RunGame();
+                
             }
-
+            else
+            {
+                Console.WriteLine("On to the next round!");
+                RunRound();
+            }
         }
-
-        private double AddToScore1()
-        {
-            double AddedScore = Player1.score + 1;
-            return AddedScore;
-        }
-
-        private double AddToScore2()
-        {
-            double AddedScore = Player1.score + 1;
-            return AddedScore;
-        }
-
     }
 }
 
