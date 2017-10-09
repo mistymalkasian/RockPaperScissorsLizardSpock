@@ -106,7 +106,6 @@ namespace RockPaperScissorsLizardSpock
 
             Player1.name = Console.ReadLine();
 
-
             Console.WriteLine("Player2, what is your name?");
 
             Player2.name = Console.ReadLine();
@@ -185,7 +184,7 @@ namespace RockPaperScissorsLizardSpock
             }
             else if (Player2.score == 2)
             {
-                Console.WriteLine("Congratulations " + Player2.name + ", you have won the game!!!");
+                Console.WriteLine(Player2.name + " has won the game!!!");
                 Console.ReadLine();
                 Console.Clear();
                 RunGame();
