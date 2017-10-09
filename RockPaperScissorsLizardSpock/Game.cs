@@ -20,7 +20,6 @@ namespace RockPaperScissorsLizardSpock
         {
             DisplayRules();
             DecideOpponent();
-            RunRound();
            
 
         }
@@ -79,6 +78,7 @@ namespace RockPaperScissorsLizardSpock
                     Player1 = new Player();
                     Player2 = new Player();
                     AskForName();
+
                
                     break;
 
@@ -86,6 +86,7 @@ namespace RockPaperScissorsLizardSpock
                     Player1 = new Player();
                     Player2 = new CPU();
                     DisplayCPUMessage();
+                    RunRound();
 
                     break;
 
@@ -105,11 +106,13 @@ namespace RockPaperScissorsLizardSpock
 
             Player1.name = Console.ReadLine();
 
+
             Console.WriteLine("Player2, what is your name?");
 
             Player2.name = Console.ReadLine();
 
             Console.Clear();
+            RunRound();
 
         }
 
