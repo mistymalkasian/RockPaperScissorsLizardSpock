@@ -49,14 +49,14 @@ namespace RockPaperScissorsLizardSpock
 
             else if (choice == 4)
             {
-                Console.WriteLine(name + " has chosen lizard!");
+                Console.WriteLine(name + " has chosen Spock!");
                 Console.ReadLine();
                 Console.Clear();
             }
 
             else if (choice == 5)
             {
-                Console.WriteLine(name + " has chosen Spock!");
+                Console.WriteLine(name + " has chosen lizard!");
                 Console.ReadLine();
                 Console.Clear();
             }

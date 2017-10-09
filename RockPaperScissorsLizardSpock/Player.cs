@@ -29,8 +29,8 @@ namespace RockPaperScissorsLizardSpock
             Console.WriteLine("Choose 1 for rock.");
             Console.WriteLine("Choose 2 for paper.");
             Console.WriteLine("Choose 3 for scissors.");
-            Console.WriteLine("Choose 4 for lizard.");
-            Console.WriteLine("Choose 5 for Spock.");
+            Console.WriteLine("Choose 4 for Spock.");
+            Console.WriteLine("Choose 5 for lizard.");
 
             choice = Convert.ToInt32(Console.ReadLine());
 
@@ -58,14 +58,14 @@ namespace RockPaperScissorsLizardSpock
 
             else if (choice == 4)
             {
-                Console.WriteLine(name + ", you chose lizard!");
+                Console.WriteLine(name + ", you chose Spock!");
                 Console.ReadLine();
                 Console.Clear();
             }
 
             else if (choice == 5)
             {
-                Console.WriteLine(name + ", you chose Spock!");
+                Console.WriteLine(name + ", you chose lizard!");
                 Console.ReadLine();
                 Console.Clear();
             }

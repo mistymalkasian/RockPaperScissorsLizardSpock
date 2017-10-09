@@ -183,14 +183,15 @@ namespace RockPaperScissorsLizardSpock
             else if (Player2.score == 2)
             {
                 Console.WriteLine("Congratulations " + Player2.name + ", you have won the game!!!");
-                Console.Clear();
                 Console.ReadLine();
+                Console.Clear();
                 RunGame();
                 
             }
             else
             {
                 Console.WriteLine("On to the next round!");
+                Console.ReadLine();
                 RunRound();
             }
         }
