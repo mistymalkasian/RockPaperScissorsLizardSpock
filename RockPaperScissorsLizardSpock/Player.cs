@@ -8,8 +8,6 @@ namespace RockPaperScissorsLizardSpock
 {
     public class Player
     {
-        //member variables
-
        public double score;
        public double choice;
        public string name;
@@ -21,7 +19,6 @@ namespace RockPaperScissorsLizardSpock
             score = 0;
             
         }
-        //member methods
 
         public virtual void PlayerChoose(Player player)
         {
@@ -86,8 +83,7 @@ namespace RockPaperScissorsLizardSpock
 
         }
 
-    }
-        
-
-    }
+     }
+       
+ }
 

@@ -8,23 +8,17 @@ namespace RockPaperScissorsLizardSpock
 {
     class Game
     {
-        //member variables
-
        Player Player1;
        Player Player2;
 
-
-        //member methods
-
-        public void RunGame()
+        public void RunPreliminaries()
         {
             DisplayRules();
             DecideOpponent();
-           
-
+ 
         }
 
-        public void DisplayRules()
+        private void DisplayRules()
         {
             Console.WriteLine("");
             Console.WriteLine("=========================");
@@ -53,7 +47,7 @@ namespace RockPaperScissorsLizardSpock
 
         }
 
-        public void DecideOpponent()
+        private void DecideOpponent()
 
         {
             Console.Clear();
@@ -86,7 +80,6 @@ namespace RockPaperScissorsLizardSpock
                     Player1 = new Player();
                     Player2 = new CPU();
                     DisplayCPUMessage();
-                    RunRound();
 
                     break;
 
@@ -99,7 +92,7 @@ namespace RockPaperScissorsLizardSpock
             }
         }
 
-        public void AskForName()
+        private void AskForName()
 
         {
             Console.WriteLine("Player1, what is your name?");
@@ -115,27 +108,28 @@ namespace RockPaperScissorsLizardSpock
 
         }
 
-        public void RunRound()
+        private void RunRound()
         {
             Player1.PlayerChoose(Player1);
             Player2.PlayerChoose(Player2);
             DetermineRoundWinner();
 
         }
-        public void AddToScore(Player player)
+        private void AddToScore(Player player)
         {
            player.score += 1;
 
         }
-        public void DisplayCPUMessage()
+        private void DisplayCPUMessage()
         {
             Console.WriteLine("Very well, you may play against the Computer! The Computer is very excited to begin.");
             Console.WriteLine("Player, what is your name?");
             Player1.name = Console.ReadLine();
+            RunRound();
         }
 
        
-        public void DetermineRoundWinner()
+        private void DetermineRoundWinner()
         {
             double Outcome = Convert.ToInt32((5 + Player1.choice - Player2.choice) % 5);
 
@@ -171,7 +165,7 @@ namespace RockPaperScissorsLizardSpock
 
         }
 
-        public void DetermineGameWinner()
+        private void DetermineGameWinner()
         {
             if (Player1.score == 2)
 
@@ -179,7 +173,7 @@ namespace RockPaperScissorsLizardSpock
                 Console.WriteLine("Congratulations " + Player1.name + ", you have won the game!!!");
                 Console.ReadLine();
                 Console.Clear();
-                RunGame();
+                RunPreliminaries();
                 
             }
             else if (Player2.score == 2)
@@ -187,7 +181,7 @@ namespace RockPaperScissorsLizardSpock
                 Console.WriteLine(Player2.name + " has won the game!!!");
                 Console.ReadLine();
                 Console.Clear();
-                RunGame();
+                RunPreliminaries();
                 
             }
             else

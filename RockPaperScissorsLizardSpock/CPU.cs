@@ -11,8 +11,6 @@ namespace RockPaperScissorsLizardSpock
         //member variables
         Random Random = new Random();
 
-
-        //object cons.
         public CPU()
         {
             name = "The Computer";
@@ -60,6 +58,7 @@ namespace RockPaperScissorsLizardSpock
                 Console.ReadLine();
                 Console.Clear();
             }
+
 
     }
   }
