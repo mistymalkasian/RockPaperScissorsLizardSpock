@@ -8,13 +8,12 @@ namespace RockPaperScissorsLizardSpock
 {
     public class CPU : Player
     {
-        //member variables
-        Random Random = new Random();
+       
+       
 
         public CPU()
         {
             name = "The Computer";
-            choice = Random.Next(1, 6);
             score = 0;
 
         }
@@ -22,6 +21,9 @@ namespace RockPaperScissorsLizardSpock
 
         public override void PlayerChoose(Player player)
         {
+            Random Random = new Random();
+            choice = Random.Next(1, 6);
+
             Console.WriteLine(name + " has made a decision as well!");
 
             if (choice == 1)
