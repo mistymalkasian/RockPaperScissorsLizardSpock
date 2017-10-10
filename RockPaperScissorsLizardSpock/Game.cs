@@ -42,6 +42,7 @@ namespace RockPaperScissorsLizardSpock
             Console.WriteLine("=================");
             Console.WriteLine("=========================");
             Console.WriteLine("");
+            Console.WriteLine("Best 3 out of 5 will be the winner!");
             Console.WriteLine("Please press ENTER to continue.");
             Console.ReadLine();
 
@@ -167,7 +168,7 @@ namespace RockPaperScissorsLizardSpock
 
         private void DetermineGameWinner()
         {
-            if (Player1.score == 2)
+            if (Player1.score == 3)
 
             {
                 Console.WriteLine("Congratulations " + Player1.name + ", you have won the game!!!");
@@ -176,7 +177,7 @@ namespace RockPaperScissorsLizardSpock
                 RunPreliminaries();
                 
             }
-            else if (Player2.score == 2)
+            else if (Player2.score == 3)
             {
                 Console.WriteLine(Player2.name + " has won the game!!!");
                 Console.ReadLine();
